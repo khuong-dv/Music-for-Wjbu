@@ -1,0 +1,429 @@
+/* =======================================
+	Imports
+======================================= */
+@import 'https://fonts.googleapis.com/icon?family=Material+Icons';
+@import url("https://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i");
+/* =======================================
+	Variables
+======================================= */
+.row .col:after, .row:after {
+  clear: both;
+  content: "";
+  display: table;
+}
+
+*, *:before, *:after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.card {
+  line-height: 1.5;
+  font-family: "Raleway", sans-serif;
+  background-color: black;
+  padding-bottom: 9rem;
+}
+
+.songs-wrapper {
+  min-height: 100vh;
+  background-color: black;
+}
+.songs-wrapper .song {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  background-color: transparent;
+  transition: all 0.2s ease-in;
+}
+.songs-wrapper .song .song-image {
+  width: 100%;
+  padding: 50% 0;
+  display: block;
+  background-size: cover;
+  background-position: center;
+}
+.songs-wrapper .song .song-info {
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0;
+  color: white;
+  display: flex;
+  position: absolute;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  padding: 10px;
+  text-shadow: 0 1px 3px black;
+  transition: opacity 0.2s ease-in;
+  background: radial-gradient(circle at center, rgba(0, 0, 0, 0.4) 0, rgba(0, 0, 0, 0.9) 100%);
+}
+.songs-wrapper .song .song-info .song-title {
+  font-weight: bold;
+  font-size: 20px;
+  height: 3rem;
+  font-family: "Raleway", sans-serif;
+}
+.songs-wrapper .song .song-info .song-title:hover {
+  cursor: pointer;
+}
+.songs-wrapper .song .song-info .song-artist {
+  font-style: italic;
+  font-size: 15px;
+}
+.songs-wrapper .song .song-info .song-artist:hover {
+  cursor: pointer;
+}
+.songs-wrapper .song:hover .song-info {
+  opacity: 1;
+}
+.songs-wrapper .playing-song {
+  border: solid 10px;
+  border-image: url("data:image/svg+xml;charset=utf-8,%3Csvg width='100' height='100' viewBox='0 0 100 100' fill='none' xmlns='http://www.w3.org/2000/svg'%3E %3Cstyle%3Epath%7Banimation:stroke 5s infinite linear%3B%7D%40keyframes stroke%7Bto%7Bstroke-dashoffset:776%3B%7D%7D%3C/style%3E%3ClinearGradient id='g' x1='0%25' y1='0%25' x2='0%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%232d3561' /%3E%3Cstop offset='25%25' stop-color='%23c05c7e' /%3E%3Cstop offset='50%25' stop-color='%23f3826f' /%3E%3Cstop offset='100%25' stop-color='%23ffb961' /%3E%3C/linearGradient%3E %3Cpath d='M1.5 1.5 l97 0l0 97l-97 0 l0 -97' stroke-linecap='square' stroke='url(%23g)' stroke-width='3' stroke-dasharray='388'/%3E %3C/svg%3E") 1;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
+}
+.row .col {
+  flex: 1;
+  margin-left: 0;
+  position: relative;
+  transition: all 0.2s ease-in;
+}
+.row .col.s1 {
+  flex: 0 0 calc(100% * (1/12));
+  max-width: calc(100% * (1/12));
+}
+.row .col.s2 {
+  flex: 0 0 calc(100% * (2/12));
+  max-width: calc(100% * (2/12));
+}
+.row .col.s3 {
+  flex: 0 0 calc(100% * (3/12));
+  max-width: calc(100% * (3/12));
+}
+.row .col.s4 {
+  flex: 0 0 calc(100% * (4/12));
+  max-width: calc(100% * (4/12));
+}
+.row .col.s5 {
+  flex: 0 0 calc(100% * (5/12));
+  max-width: calc(100% * (5/12));
+}
+.row .col.s6 {
+  flex: 0 0 calc(100% * (6/12));
+  max-width: calc(100% * (6/12));
+}
+.row .col.s7 {
+  flex: 0 0 calc(100% * (7/12));
+  max-width: calc(100% * (7/12));
+}
+.row .col.s8 {
+  flex: 0 0 calc(100% * (8/12));
+  max-width: calc(100% * (8/12));
+}
+.row .col.s9 {
+  flex: 0 0 calc(100% * (9/12));
+  max-width: calc(100% * (9/12));
+}
+.row .col.s10 {
+  flex: 0 0 calc(100% * (10/12));
+  max-width: calc(100% * (10/12));
+}
+.row .col.s11 {
+  flex: 0 0 calc(100% * (11/12));
+  max-width: calc(100% * (11/12));
+}
+.row .col.s12 {
+  flex: 0 0 calc(100% * (12/12));
+  max-width: calc(100% * (12/12));
+}
+@media (min-width: 601px) {
+  .row .col.m1 {
+    flex: 0 0 calc(100% * (1/12));
+    max-width: calc(100% * (1/12));
+  }
+  .row .col.m2 {
+    flex: 0 0 calc(100% * (2/12));
+    max-width: calc(100% * (2/12));
+  }
+  .row .col.m3 {
+    flex: 0 0 calc(100% * (3/12));
+    max-width: calc(100% * (3/12));
+  }
+  .row .col.m4 {
+    flex: 0 0 calc(100% * (4/12));
+    max-width: calc(100% * (4/12));
+  }
+  .row .col.m5 {
+    flex: 0 0 calc(100% * (5/12));
+    max-width: calc(100% * (5/12));
+  }
+  .row .col.m6 {
+    flex: 0 0 calc(100% * (6/12));
+    max-width: calc(100% * (6/12));
+  }
+  .row .col.m7 {
+    flex: 0 0 calc(100% * (7/12));
+    max-width: calc(100% * (7/12));
+  }
+  .row .col.m8 {
+    flex: 0 0 calc(100% * (8/12));
+    max-width: calc(100% * (8/12));
+  }
+  .row .col.m9 {
+    flex: 0 0 calc(100% * (9/12));
+    max-width: calc(100% * (9/12));
+  }
+  .row .col.m10 {
+    flex: 0 0 calc(100% * (10/12));
+    max-width: calc(100% * (10/12));
+  }
+  .row .col.m11 {
+    flex: 0 0 calc(100% * (11/12));
+    max-width: calc(100% * (11/12));
+  }
+  .row .col.m12 {
+    flex: 0 0 calc(100% * (12/12));
+    max-width: calc(100% * (12/12));
+  }
+}
+@media (min-width: 993px) {
+  .row .col.l1 {
+    flex: 0 0 calc(100% * (1/12));
+    max-width: calc(100% * (1/12));
+  }
+  .row .col.l2 {
+    flex: 0 0 calc(100% * (2/12));
+    max-width: calc(100% * (2/12));
+  }
+  .row .col.l3 {
+    flex: 0 0 calc(100% * (3/12));
+    max-width: calc(100% * (3/12));
+  }
+  .row .col.l4 {
+    flex: 0 0 calc(100% * (4/12));
+    max-width: calc(100% * (4/12));
+  }
+  .row .col.l5 {
+    flex: 0 0 calc(100% * (5/12));
+    max-width: calc(100% * (5/12));
+  }
+  .row .col.l6 {
+    flex: 0 0 calc(100% * (6/12));
+    max-width: calc(100% * (6/12));
+  }
+  .row .col.l7 {
+    flex: 0 0 calc(100% * (7/12));
+    max-width: calc(100% * (7/12));
+  }
+  .row .col.l8 {
+    flex: 0 0 calc(100% * (8/12));
+    max-width: calc(100% * (8/12));
+  }
+  .row .col.l9 {
+    flex: 0 0 calc(100% * (9/12));
+    max-width: calc(100% * (9/12));
+  }
+  .row .col.l10 {
+    flex: 0 0 calc(100% * (10/12));
+    max-width: calc(100% * (10/12));
+  }
+  .row .col.l11 {
+    flex: 0 0 calc(100% * (11/12));
+    max-width: calc(100% * (11/12));
+  }
+  .row .col.l12 {
+    flex: 0 0 calc(100% * (12/12));
+    max-width: calc(100% * (12/12));
+  }
+}
+@media (min-width: 1301px) {
+  .row .col.x1 {
+    flex: 0 0 calc(100% * (1/12));
+    max-width: calc(100% * (1/12));
+  }
+  .row .col.x2 {
+    flex: 0 0 calc(100% * (2/12));
+    max-width: calc(100% * (2/12));
+  }
+  .row .col.x3 {
+    flex: 0 0 calc(100% * (3/12));
+    max-width: calc(100% * (3/12));
+  }
+  .row .col.x4 {
+    flex: 0 0 calc(100% * (4/12));
+    max-width: calc(100% * (4/12));
+  }
+  .row .col.x5 {
+    flex: 0 0 calc(100% * (5/12));
+    max-width: calc(100% * (5/12));
+  }
+  .row .col.x6 {
+    flex: 0 0 calc(100% * (6/12));
+    max-width: calc(100% * (6/12));
+  }
+  .row .col.x7 {
+    flex: 0 0 calc(100% * (7/12));
+    max-width: calc(100% * (7/12));
+  }
+  .row .col.x8 {
+    flex: 0 0 calc(100% * (8/12));
+    max-width: calc(100% * (8/12));
+  }
+  .row .col.x9 {
+    flex: 0 0 calc(100% * (9/12));
+    max-width: calc(100% * (9/12));
+  }
+  .row .col.x10 {
+    flex: 0 0 calc(100% * (10/12));
+    max-width: calc(100% * (10/12));
+  }
+  .row .col.x11 {
+    flex: 0 0 calc(100% * (11/12));
+    max-width: calc(100% * (11/12));
+  }
+  .row .col.x12 {
+    flex: 0 0 calc(100% * (12/12));
+    max-width: calc(100% * (12/12));
+  }
+}
+
+.music-controller {
+  background-color: rgba(41, 41, 41, 0.7);
+  position: fixed;
+  bottom: 0px;
+  height: 9rem;
+  display: block;
+  width: 100%;
+}
+.music-controller .red-line {
+  z-index: 1;
+  position: absolute;
+  height: 8px;
+  background-color: red;
+}
+.music-controller .ranger-slider {
+  z-index: 2;
+  position: relative;
+  width: 100%;
+  height: 8px;
+}
+.music-controller .slider {
+  -webkit-appearance: none;
+  top: 0px;
+  position: absolute;
+  width: 100%;
+  height: 8px;
+  background: #d3d3d3;
+  outline: none;
+  opacity: 0.3;
+  -webkit-transition: 0.2s;
+  transition: opacity 0.2s;
+}
+.music-controller .slider:hover {
+  cursor: pointer;
+}
+.music-controller .slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 8px;
+  height: 8px;
+  background: #ef4444;
+  cursor: pointer;
+}
+.music-controller .slider::-moz-range-thumb {
+  width: 8px;
+  height: 8px;
+  background: #ef4444;
+  cursor: pointer;
+}
+.music-controller .timer {
+  position: relative;
+  color: white;
+}
+.music-controller .timer .timer-current {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+.music-controller .timer .timer-length {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+.music-controller .timer .current-song {
+  position: absolute;
+  top: 10px;
+}
+.music-controller .play-controller {
+  z-index: 1;
+  height: 100%;
+  width: 100%;
+  position: relative;
+}
+.music-controller .play-controller .play-btn {
+  margin-top: 2.25rem;
+  align-items: center;
+  color: #c9c9c9;
+  opacity: 0.9;
+  border-radius: 40px;
+}
+.music-controller .play-controller .play-btn:hover {
+  opacity: 1;
+  color: #cccccc;
+  cursor: pointer;
+}
+.music-controller .play-controller .play-btn:active {
+  transform: scale(0.9);
+}
+.music-controller .play-controller .skip-btn {
+  color: #c9c9c9;
+  margin-top: 2.25rem;
+}
+.music-controller .play-controller .skip-btn:hover {
+  opacity: 1;
+  color: #cccccc;
+  cursor: pointer;
+}
+.music-controller .play-controller .skip-btn:active {
+  transform: scale(0.9);
+}
+.music-controller .other-btn {
+  z-index: 2;
+  position: absolute;
+  height: 2rem;
+  width: 100%;
+  bottom: 1rem;
+}
+.music-controller .other-btn .random-btn {
+  color: #c9c9c9;
+  position: relative;
+}
+.music-controller .other-btn .random-btn:hover {
+  opacity: 1;
+  color: #cccccc;
+  cursor: pointer;
+}
+.music-controller .other-btn .random-btn:active {
+  transform: scale(0.9);
+}
+.music-controller .other-btn .repeat-btn {
+  color: #c9c9c9;
+  position: relative;
+}
+.music-controller .other-btn .repeat-btn:hover {
+  opacity: 1;
+  color: #cccccc;
+  cursor: pointer;
+}
+.music-controller .other-btn .repeat-btn:active {
+  transform: scale(0.9);
+}
+
+/*# sourceMappingURL=MusicPlayerCard.css.map */
